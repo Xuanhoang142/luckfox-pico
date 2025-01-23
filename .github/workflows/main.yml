@@ -20,7 +20,7 @@ jobs:
   build-system:
     strategy:
       matrix:
-        device: [ pico-plus-sd, pico-plus-flash ]
+        device: [ pico-pro-max-sd, pico-pro-max-flash ]
     # runs-on: "cirun-aws-amd64--${{ github.run_id }}"
     runs-on: ubuntu-latest
     needs: build-rootfs
