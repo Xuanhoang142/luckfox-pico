@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ROOTFS_NAME="rootfs-alpine.tar.gz"
-DEVICE_NAME="pico-mini-b"
+DEVICE_NAME="pico-max"
 
 while getopts ":f:d:" opt; do
   case ${opt} in
@@ -27,8 +27,8 @@ popd || exit
 
 rm -rf .BoardConfig.mk
 case $DEVICE_NAME in
-  pico-plus-sd) ln -s project/cfg/BoardConfig_IPC/BoardConfig-SD_CARD-Buildroot-RV1103_Luckfox_Pico_Plus-IPC.mk .BoardConfig.mk ;;
-  pico-plus-flash) ln -s project/cfg/BoardConfig_IPC/BoardConfig-SPI_NAND-Buildroot-RV1103_Luckfox_Pico_Plus-IPC.mk .BoardConfig.mk ;;
+  pico-max-sd) ln -s project/cfg/BoardConfig_IPC/BoardConfig-SD_CARD-Buildroot-RV1106_Luckfox_Pico_Max-IPC.mk .BoardConfig.mk ;;
+  pico-max-flash) ln -s project/cfg/BoardConfig_IPC/BoardConfig-SPI_NAND-Buildroot-RV1106_Luckfox_Pico_Max-IPC.mk .BoardConfig.mk ;;
   *)
     echo "Invalid device: ${DEVICE_NAME}."
     exit 1
